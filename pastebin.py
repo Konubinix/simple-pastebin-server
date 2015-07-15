@@ -15,6 +15,7 @@
 import BaseHTTPServer
 from SimpleHTTPServer import SimpleHTTPRequestHandler
 
+import sys
 import uuid
 import os
 import urllib
@@ -22,7 +23,7 @@ import cgi
 
 
 # the port to listen on
-HTTP_PORT = 8000
+HTTP_PORT = 8000 if len(sys.argv) == 1 else int(sys.argv[1])
 
 FORM = """
 <html class="html">
